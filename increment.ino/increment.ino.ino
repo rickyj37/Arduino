@@ -28,31 +28,37 @@ void setup() {
 
 // Initialize some variables for the void loop()
 int red = 0, green= 0, blue = 0, white = 10;
-int wait = 500;
+int wait = 100;
 int led = 0;
-int i;
 
 void loop() {
   
-  for ( led = 0; led < 16; led++){  
-    strip.setPixelColor(led, red, green , blue, white);
-  }//end of for loop
-    strip.show();
+    
+  strip.setPixelColor(led, red, green , blue, white);
+  strip.show();
     delay(wait);
-    red = red + 8;
-    green = green + 16;
-    blue = blue + 32;
-    white = white + 1;
+    
+  red = red + 8;
+  green = green + 30;
+  blue = blue + 60;
+  white = white + 1;
 
-    if (red > 255) red = 0;
-    if (green > 255) green = 0;
+  // Increment the led.  This can also be done with led++
+  led = led + 1;
+  if(led > 15)led = 0;
+
+  if (red > 255) red = 0;
+   if (green > 255) green = 0;
     if (blue > 255) blue = 0;
-    if (white > 50) white = 0;
+     if (white > 50) white = 0;
        
     if (red < 0) red = 255;
-    if (green  < 0) green = 255;
+   if (green  < 0) green = 255;
     if (blue < 0) blue = 255;
-    if (white  < 0 ) white = 50;
+     if (white  < 0 ) white = 50;
+   Serial.print(" led = ");
+   Serial.println(led);
 }
+
 
 
