@@ -32,7 +32,7 @@ void setup() {
 void loop() {
   clearColor();
   redColor();
-  greenColor();
+//  greenColor();
   //extra
   blueColor();
 
@@ -89,8 +89,10 @@ int i;
     if (blue < 0) blue = 255;
     if (white  < 0 ) white = 50;
 }
-int greenColor(){
-  int red = o, green = 255, blue = 0, white = 1;
+
+int blueColor(){
+  
+int red = 0, green = 255, blue = 0, white = 1;
 int wait = 500;
 int led = 0;
 int i;
@@ -114,5 +116,4 @@ int i;
     if (blue < 0) blue = 255;
     if (white  < 0 ) white = 50;
 }
-
 
